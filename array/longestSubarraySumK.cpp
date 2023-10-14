@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+  //working fine
 
 int longestSubarrayWithsumK(int arr[],int size,int required_sum){
     
