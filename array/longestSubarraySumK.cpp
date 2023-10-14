@@ -5,7 +5,7 @@ using namespace std;
 
 int longestSubarrayWithsumK(int arr[],int size,int required_sum){
     
-    int maxCount = -1;
+    int maxCount = -1,len = -1;
     for (int i = 0; i < size-1; i++)
     {
         int sum = 0,count = 0;
@@ -16,6 +16,8 @@ int longestSubarrayWithsumK(int arr[],int size,int required_sum){
            {
               count++;
               maxCount = max(maxCount,count);
+              if(sum == required_sum)
+                len = maxCount;
            }
 
            else break;
@@ -24,7 +26,7 @@ int longestSubarrayWithsumK(int arr[],int size,int required_sum){
         
     }
 
-    return maxCount;
+    return len;
     
 }
 
