@@ -41,5 +41,5 @@ int main(){
     cout<<"Enter required sum: " ;
        cin>>k;
       
-    cout<<"largest length is: "<<longestSubarrayWithsumK(arr,size,k);
+    cout<<"largest length : "<<longestSubarrayWithsumK(arr,size,k);
 }
