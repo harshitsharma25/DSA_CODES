@@ -1,37 +1,53 @@
 #include<iostream>
 using namespace std;
 
-int moveZeroesEnd(int arr[],int size){
+// int leaders(int arr[],int size){
+//   int res = 0,temp[10];
+//   for (int i = 0; i < size; i++)
+//   {
+//     bool flag = true;
+//     for (int j = i+1; j < size; j++)
+//     {
+//      if(arr[i] < arr[j])
+//         flag = false;
+//     }
 
-  int count = 0;
-
-  for (int i = 0; i < size; i++)
-  {
-    if (arr[i] != 0)
-    {
-      arr[count++] = arr[i];
-    }
+//     if(flag)
+//        temp[res++] = arr[i];
     
-  }
+//   }
 
-  for (int i = count; i < size; i++)
+
+//   cout<<"leaders are: ";
+//   for (int i = 0; i < res; i++)
+//   {
+//     cout<<temp[i]<<" ";
+//   }
+  
+  
+// }
+
+int leaders(int arr[],int size){
+  int temp[10],res = 0,maxi = INT_MIN;
+
+  for (int i = size-1; i >= 0; i--)
   {
-    arr[i] = 0;
+    if(arr[i] > maxi){
+      temp[res++] = arr[i];
+      maxi = max(maxi,arr[i]);
+    }
   }
-  
 
-  cout<<"count is: "<<count<<endl;
-
-  cout<<"array is: ";
-
-  for (int i = 0; i < size; i++)
+  cout<<"leaders are: ";
+  for (int i = 0; i < res; i++)
   {
-    cout<<arr[i]<<" ";
+   cout<<temp[i]<<" ";
   }
   
   
-
 }
+
+
 
 int main(){
     int size,arr[10],k;
@@ -47,7 +63,7 @@ int main(){
 
 
   //  cout<<"answer is: " ;
-   moveZeroesEnd(arr,size);
+   leaders(arr,size);
     //  cout<<moveZeroesEnd(arr,size);
 
       
