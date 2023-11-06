@@ -7,7 +7,7 @@ using namespace std;
 // int findInsersection(int arr1[],int size1,int arr2[],int size2){
 
 
-//     // a1 = {1,1,3,5,6}     a2 = {3,5,6,6,7,8}
+// //     // a1 = {1,1,3,5,6}     a2 = {3,5,6,6,7,8}
 
 //   int temp[10],res=0;
 //  for (int i = 0; i < size1; i++)
@@ -39,7 +39,7 @@ using namespace std;
 // }
 
 
-                                                            //Brute force approch  T.C = O(N^2)  S.C = O(N)
+                                                            //Brute force approch  T.C = O(N)  S.C = O(N)
 
 
 void findInsersection(int arr1[], int size1, int arr2[], int size2)
@@ -59,7 +59,7 @@ void findInsersection(int arr1[], int size1, int arr2[], int size2)
 
         else if (arr2[j] == arr1[i])
         {
-            temp[res++] = arr1[i];
+            arr1[res++] = arr1[i];
             i++;
             j++;
         }
@@ -78,7 +78,7 @@ void findInsersection(int arr1[], int size1, int arr2[], int size2)
 
     for (int i = 0; i < res; i++)
     {
-        cout << temp[i] << " ";
+        cout << arr1[i] << " ";
     }
     }
 }

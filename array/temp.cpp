@@ -27,22 +27,29 @@ using namespace std;
   
 // }
 
-int leaders(int arr[],int size){
-  int temp[10],res = 0,maxi = INT_MIN;
-
-  for (int i = size-1; i >= 0; i--)
+int zeroToEnd(int arr[],int size){
+  int left = 0,right = size-1;
+  while (left<right)
   {
-    if(arr[i] > maxi){
-      temp[res++] = arr[i];
-      maxi = max(maxi,arr[i]);
+    if(arr[left]==0 && arr[right]!=0)
+    {
+    swap(arr[left],arr[right]);
+    left++; right--;
+    }
+
+    else if(arr[left] != 0){
+      left++;
+    }
+    else if(arr[right] == 0){
+      right--;
     }
   }
 
-  cout<<"leaders are: ";
-  for (int i = 0; i < res; i++)
+  for (int i = 0; i < size; i++)
   {
-   cout<<temp[i]<<" ";
+   cout<<arr[i]<<" ";
   }
+  
   
   
 }
@@ -62,9 +69,9 @@ int main(){
       }
 
 
-  //  cout<<"answer is: " ;
-   leaders(arr,size);
-    //  cout<<moveZeroesEnd(arr,size);
+   cout<<"answer is: " ;
+   zeroToEnd(arr,size);
+
 
       
 }
