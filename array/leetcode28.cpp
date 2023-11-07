@@ -32,7 +32,7 @@ int strStr(string haystack, string needle) {
 
 int main(){
     int size1,size2,k;
-    char a[10],b[10];
+    char a[40],b[10];
 
     // cout<<"Enter the size 1: ";
     //   cin>>size1;
