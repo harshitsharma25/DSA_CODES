@@ -54,6 +54,10 @@ using namespace std;
                                         // OPTIMAL APPROACH 1   - MATH  T.C = O(N) , S.C = O(1)
 
 void findMissingAndRepeating(int arr[],int size){
+
+    // x = repeating number
+    // y = missing number
+
     long long SN = (size * (size+1)) /2;
     long long S2N = (size * (size+1) * (2*size+1)) / 6;
 
@@ -78,7 +82,10 @@ void findMissingAndRepeating(int arr[],int size){
                                      // OPTIMAL APPROACH 2 - XOR
 
 void findMissingAndRepeating(int arr[],int size){
+    // x = repeating number
+    // y = missing number
     
+
 }
 
 int main(){
