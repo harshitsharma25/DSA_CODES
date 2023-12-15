@@ -1,5 +1,14 @@
 {
     "files.associations": {
+<<<<<<< HEAD
         "random": "cpp"
     }
+=======
+        "xutility": "cpp",
+        "iostream": "cpp",
+        "utility": "cpp",
+        "cmath": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+>>>>>>> 392fb54b73132a45114d0ce7483ee95f4973e10d
 }
