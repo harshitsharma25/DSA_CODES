@@ -105,6 +105,6 @@ int main(){
        cin>> arr[i];
       }
 
-    cout<<"missing number is: "<<findMissing(arr,size);
+    cout<<"missing number is : "<<findMissing(arr,size);
       
 }

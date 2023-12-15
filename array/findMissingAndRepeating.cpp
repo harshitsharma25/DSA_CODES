@@ -76,7 +76,7 @@ void findMissingAndRepeating(int arr[],int size){
     long long x = (val1 + val2)/2;
     long long y = x-val1;
 
-    cout<<"Repeating number is:"<<(int)x << " Missing number is:"<<(int)y;
+    cout<<"Repeating number is:"<<(int)x << " Missing number is :"<<(int)y;
 }
 
                                      // OPTIMAL APPROACH 2 - XOR
