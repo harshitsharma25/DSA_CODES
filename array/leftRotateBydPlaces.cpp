@@ -12,7 +12,7 @@ using namespace std;
 //     {
 //       temp[i] = arr[i];
 //     }
-//     for (int i = 0; i < size; i++)
+//     for (int i = d; i < size; i++)
 //     {
 //         arr[i-d] = arr[i];
 //     }

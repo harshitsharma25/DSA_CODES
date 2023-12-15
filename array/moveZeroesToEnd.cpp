@@ -31,50 +31,28 @@ using namespace std;
     
 // }
 
-// void moveZeroesToEnd(int arr[],int size){
-//   int count = 0;
-
-//   for (int i = 0; i < size; i++)
-//   {
-//     if (arr[i] != 0)
-//     {
-//       swap(arr[i],arr[count]);
-//       count++;
-//     }
-    
-//   }
-
-//   cout<<"final array is: ";
-//   for (int i = 0; i < size; i++)
-//   {
-//     cout<<arr[i]<<" ";
-//   }
-  
-// }
-
-int moveZeroesToEnd(int arr[],int size){
-
-  int index;
+void moveZeroesToEnd(int arr[],int size){
+  int count = 0;
 
   for (int i = 0; i < size; i++)
   {
-     if (arr[i] == 0)
-     {
-       index = i;
-       break;
-     }
-     
-  }
-
-
-  for (int i = index; i < size; i++)
-  {
+    if (arr[i] != 0)
+    {
+      swap(arr[i],arr[count]);
+      count++;
+    }
     
   }
-  
-  
 
+  cout<<"final array is: ";
+  for (int i = 0; i < size; i++)
+  {
+    cout<<arr[i]<<" ";
+  }
+  
 }
+
+
 
 int main(){
     int size,arr[10];
