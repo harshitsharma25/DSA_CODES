@@ -12,7 +12,7 @@ using namespace std;
             temp += s[i];
         }
 
-        for(int i = n-shift-1; i>=0; i--){  // right shift performed
+        for(int i = n-shift-1; i>=0; i--){  // right shift performed 
             s[shift+i] = s[i];
         }
 
@@ -52,11 +52,11 @@ int main(){
     cout<<"Enter the string goal: ";
      cin >> goal;
 
-    cout<<"Enter the string your:";
+    cout<<"Enter the string your :";
       cin>>s;
 
    if(rotateString(s,goal)) cout<<"string is rotated";
-   else   cout<<"string is not rotated";
+   else   cout<<"your string is not rotated";
 
       
 }
