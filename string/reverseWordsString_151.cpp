@@ -20,18 +20,22 @@ string reverseWords(string s){
        while(index >= 0) {
             if(s[index] != ' ')
              index--;
+
+             else break;
         }
 
        ans += s.substr(index+1,i-index);
 
     //    int m=ans.length();
 
+     while(index != -1  && s[index] == ' '){
+        index--;
+       }
+
        if(index!=-1) 
          ans += ' ';
 
-       while(s[index] == ' '){
-        index--;
-       }
+      
 
        i = index;
     }
@@ -41,8 +45,8 @@ string reverseWords(string s){
 
 int main(){
     string s;
-    cout<<"Enter string: ";
-       cin>>s;
+    cout<<"Enter string:";
+     getline(cin,s);
 
-    cout<<"answer is: "<<reverseWords(s);
+    cout<<"answer is:"<<reverseWords(s);
 }
