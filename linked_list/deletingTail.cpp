@@ -1,4 +1,4 @@
-// program to delete the node from the one d linked list
+// program to delete the tail node from the one d linked list
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -73,10 +73,12 @@ Node* removeTail(Node* head){
 
 int main(){
     vector<int> arr = {2,44,5,22,66,35};
+   
     Node* head = convertArr2LL(arr);
 
     // delete the node head
     head = removeTail(head);
+    cout<<"after deleting the element:";
     print(head);
 
 }

@@ -1,4 +1,4 @@
-// program to delete the node from the one d linked list
+// program to delete the head node from the one d linked list
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -48,11 +48,13 @@ void print(Node* head){
 }
 
 int main(){
-    vector<int> arr = {2,44,5,22,66,35};
+    // vector<int> arr = {2,44,5,22,66,35};
+    vector<int> arr = {7,4};
     Node* head = convertArr2LL(arr);
 
     // delete the node head
     head = removeHead(head);
+    cout<<"after deleting the head:";
     print(head);
 
 }
