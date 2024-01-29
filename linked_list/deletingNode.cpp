@@ -1,4 +1,4 @@
-// program to search the element in LL.
+// program to delete the node from the one d linked list
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -11,12 +11,12 @@ struct Node{
         data = data1;
         next = nullptr;
     }
+
     Node(int data1,Node* next1){
         data = data1;
         next = next1;
     }
 };
-
 
 Node* convertArr2LL(vector<int> &arr){
     Node* head = new Node(arr[0]);
@@ -30,21 +30,29 @@ Node* convertArr2LL(vector<int> &arr){
     return head;
 }
 
-int searchLL(Node* head,int val){
-   Node* temp = head;
-   while(temp){
-    if(temp->data == val) return 1;
-    temp = temp -> next;
-   }
+Node* removeHead(Node* head){
 
-return 0;
+    if(head == NULL) return head;    // this is the edge case.
+    Node* temp = head;
+    head = head -> next;
+    delete temp;
+    return head;
+}
+
+void print(Node* head){
+    while(head != NULL){
+        cout<<head -> data<<" ";
+        head = head -> next;
+    }
+    cout<<endl;
 }
 
 int main(){
-    vector<int> arr = {24,5,6,7,7,};
+    vector<int> arr = {2,44,5,22,66,35};
     Node* head = convertArr2LL(arr);
-    int n = 24;
-    if(searchLL(head,n))  cout<<"element "<<n<<" is found.";
-    else  cout<<"element "<<n<<" not found";
+
+    // delete the node head
+    head = removeHead(head);
+    print(head);
 
 }
