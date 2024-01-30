@@ -91,7 +91,7 @@ Node* removeKthElement(Node* head,int value){
     while(temp != NULL){
         if(temp ->data == value){
             prev -> next = prev -> next -> next;
-            delete temp;
+            // delete temp;                   // if we don't add it then delete operation still performs but it will remains in the heap memory but will not shown in the linked list.
             break;
         }
 
@@ -111,7 +111,7 @@ int main(){
     Node* head = convertArr2LL(arr);
 
     // delete the node head
-    head = removeKthElement(head,2);
+    head = removeKthElement(head,5);
     cout<<"after deleting kth the element:";
     print(head);
 
