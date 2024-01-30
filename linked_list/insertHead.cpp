@@ -70,6 +70,37 @@ Node* insertTail(Node* head,int val){
     return head;
 }
 
+
+
+Node* insertAtK(Node* head,int val,int k){
+    if(head == NULL){
+        if(k==1){
+        return new Node(val);
+        }
+        else return NULL;
+    }
+
+    if(k==1){
+        Node* temp = new Node(val,head);
+        return temp;
+    }
+
+    int cnt = 0;
+    Node* temp = head;
+    while (temp != NULL){
+        cnt++;
+        if(cnt == k-1){
+            Node* x = new Node(val,head);
+            x ->next = temp ->next;
+            temp -> next = x;
+            break;
+        }
+        temp = temp->next;
+    }
+    
+    return head;
+}
+
 int main(){
 
     vector<int> arr = {2,44,5,22,66,35};
@@ -78,7 +109,7 @@ int main(){
 
     // delete the node head
     // head = insertHead(head,58);
-    head = insertTail(head,5888);
+    head = insertAtK(head,5888,4);
     cout<<"inserting the head:";
     print(head);
 
