@@ -105,7 +105,6 @@ Node* removeKthElement(Node* head,int value){
 
 
 int main(){
-
     vector<int> arr = {2,44,5,22,66,35};
    
     Node* head = convertArr2LL(arr);
@@ -114,5 +113,4 @@ int main(){
     head = removeKthElement(head,5);
     cout<<"after deleting kth the element:";
     print(head);
-
 }
