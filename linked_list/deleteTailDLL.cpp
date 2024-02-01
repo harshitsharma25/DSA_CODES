@@ -53,13 +53,17 @@ Node* deleteTail(Node* head){
     Node* previous = tail -> back;
     previous -> next = nullptr;
     tail -> back = nullptr;
+    delete tail;
     return head;
 }
 
 int main(){
-    vector<int> arr = {344,22,55};
+    vector<int> arr = {344,555,6};
     Node* head = convertArr2DLL(arr);
     head = deleteTail(head);
-    cout<<"doubly linked list is: ";
-    print(head);
+    if(head==NULL) cout<<"ans = Linked list is NULL!";
+    else{
+    cout<<"ans = doubly linked list is: ";
+     print(head);
+    }
 }
