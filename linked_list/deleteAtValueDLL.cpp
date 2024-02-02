@@ -1,3 +1,5 @@
+// this question never asks to delete the head of the linked list bcoz we have to write extra lines of code i.e.
+
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
