@@ -48,6 +48,8 @@ void print(Node* head){
 
 Node* reverseDLL(Node* head)
 {
+
+    if(head == NULL || head -> next == NULL) return head;
     Node* prev = NULL;
     Node* current = head;
 

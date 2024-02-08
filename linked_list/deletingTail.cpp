@@ -22,6 +22,7 @@ struct Node{
 
 
 
+
 // function to convert array to linked list.
 
 Node* convertArr2LL(vector<int> &arr){
@@ -76,7 +77,7 @@ int main(){
    
     Node* head = convertArr2LL(arr);
 
-    // delete the node head
+    // delete the tail node
     head = removeTail(head);
     cout<<"after deleting the element:";
     print(head);

@@ -56,11 +56,12 @@ Node* reverseDLL(Node* head){
     while(current != NULL){
         prev = current -> prev;
         current -> prev =  current -> next;
-        current -> next = prev;
-        current = current -> prev;
+        current -> next = prev;        // reversing the links of previous and next node of current node.
+        current = current -> prev;    // by this we are moving further in LL not back in LL.
     }
 
-    return prev -> prev;
+    return prev -> prev;       // here printing the back node's data of previous node means we are actually printing the 
+                              // data of next node's data of current's next node . and i.e our answer.
 
 }
 
