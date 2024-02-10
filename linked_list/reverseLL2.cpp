@@ -40,8 +40,10 @@ Node* convertArr2LL(vector<int> &arr){
     return head;
 }
 
+ Node* reverseBetween(Node* head, int left, int right) {
+        if(head -> next == NULL) return head;
+        if(left == right) return head;
 
-Node* reverseLL2(Node* head,int left,int right){
     stack<int> st;
     Node* r = head;
     Node* l = head;
@@ -52,6 +54,7 @@ Node* reverseLL2(Node* head,int left,int right){
         if(cnt == left) break;
         l = l->next;
     }
+
     Node* tempHead = l;       // temporary stores the left node.
 
     cnt = 0;
@@ -61,21 +64,24 @@ Node* reverseLL2(Node* head,int left,int right){
         r = r->next;
     }
 
-    while(l -> val != r ->next -> val){
+    while(l -> val != r -> val){
         st.push(l -> val);
         l = l->next;
     }
+    st.push(r -> val);   // completely inserted required range in stack.
 
     l = tempHead;                  // again declares the left node.
-    while(l->val != r -> next -> val){
+    while(l->val != r -> val){
         l -> val = st.top();
         st.pop();
         l = l -> next;
     }
+    l -> val = st.top();
+
 
     return head;
-}
-
+        
+    }
 
 int main(){
 
@@ -84,7 +90,7 @@ int main(){
     Node* head = convertArr2LL(arr);
 
     // delete the node head
-    head = reverseLL2(head,1,2);
+    head = reverseBetween(head,1,25);
     cout<<"after deleting kth the element:";
     print(head);
 
