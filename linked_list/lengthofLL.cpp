@@ -41,6 +41,7 @@ int lengthOfLL(Node* head){
 }
 
 int main(){
+  
     vector<int> arr = {24,5,6,77,4,66,78,65,2};
     Node* head = convertArr2LL(arr);
     int len = lengthOfLL(head);

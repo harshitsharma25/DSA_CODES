@@ -49,47 +49,59 @@ void print(Node* head){
    }
 }
 
+    Node* removeNthFromEnd(Node* head, int n) {
 
-Node* removeKthElement(Node* head,int pos){
-    if(pos == 1){
-        Node* temp = head;
-        head = head -> next;
-        delete temp;
-        // free(temp);
+        // if(head -> next == NULL) return NULL;
+    //     if(n == 1){
+    //     Node* temp1 = head;
+    //     head = head -> next;
+    //     // free(temp1);
+    //     return head;
+    //   }
+
+      int size = 0;
+      Node* temp = head;
+      while(temp != NULL){
+          size++;
+          temp = temp -> next;
+      }
+
+      if(size == n){
+        Node* newHead = head -> next;
+        return newHead;
+      }
+
+     
+
+     int n2 = size - n;
+      temp = head;
+
+      while(temp != NULL){
+          n2--;
+          if(n2==0){
+             
+              break;
+          }
+          
+          temp = temp -> next;
+      }
+
+       Node* delNode = temp -> next;
+       temp -> next = temp -> next -> next;
+              free(delNode);
+
         return head;
     }
-
-    int cnt = 0;
-    Node* prev = NULL;
-    Node* temp = head;
-
-    while(temp != NULL){
-        cnt++;
-
-        if(cnt == pos){
-            prev ->next = temp->next;
-            // free(temp);
-            break;
-        }
-
-        prev = temp;
-        temp = temp -> next;
-
-    }
-    return head;
-}
-
-
 
 
 int main(){
 
-    vector<int> arr = {2,44,5,22,66,35};
+    vector<int> arr = {1,2};
    
     Node* head = convertArr2LL(arr);
 
-    // delete the node head
-    head = removeKthElement(head,3);
+    
+    head = removeNthFromEnd(head,1);
     cout<<"after deleting kth the element:";
     print(head);
 
