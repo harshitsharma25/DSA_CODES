@@ -1,4 +1,4 @@
-//  Program to reverse the singly linked list   T.C = O(N)  , S.C = O(1)
+//  Program to 
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -43,30 +43,41 @@ Node* convertArr2LL(vector<int> &arr){
 }
 
 
-Node* reverseSinglyLL(Node* head){
-   Node* current = head;
-   Node* prev = NULL;
+int helper(Node* temp){
+    if(temp == NULL){
+        return 1;
+    }
 
-   while(current != NULL){
-    Node* forward = current -> next;
-    current -> next = prev;
-    prev = current;
-    current = forward; 
-   }
+    int carry;
+    carry = helper(temp -> next);
+    temp -> val = temp -> val + carry;
+    if(temp -> val < 10){
+        return 0;
+    }
+    temp ->val = 0;     // if data is 10 , then carry will be 1
+    return 1;
+}
 
-   return prev;
+Node* addOne(Node* head){
+    int carry = helper(head);
+    if(carry == 1){
+        Node* newNode = new Node(1);
+        newNode -> next = head;
+        return newNode;
+    }
+    return head;
 }
 
 
 int main(){
 
-    vector<int> arr = {2,44,44,66,1,78,6,855,24};
+    vector<int> arr = {9,9,9};
    
     Node* head = convertArr2LL(arr);
 
     // delete the node head
-    head = reverseSinglyLL(head);
-    cout<<"after Reversing the Linked List :";
+    head = addOne(head);
+    cout<<"adding one at last of LL:";
     print(head);
 
 }
