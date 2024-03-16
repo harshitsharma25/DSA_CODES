@@ -31,8 +31,10 @@ string convertDecimal2Binary(int num){
 
 int main(){
     int num;
-   cout<<"Enter Your Decimal Number:";
-     cin>>num;
+  cout<<"Enter Your Decimal Number:";
+    cin>>num;
+
+ 
 
 
    cout<<"Your Binary equivalent is:" << convertDecimal2Binary(num);
