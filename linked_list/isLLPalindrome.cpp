@@ -9,18 +9,35 @@ using namespace std;
       ListNode(int x, ListNode *next) : val(x), next(next) {}
   };
 
- ListNode* reverse(ListNode* head){
-        ListNode* tempHead = head;
-        ListNode* prev = NULL;
 
-        while(tempHead != NULL){
-            ListNode* front = tempHead -> next;
-            tempHead -> next = prev;
-            prev = tempHead;
-            tempHead = front;
+    ListNode* reverseList(ListNode* head){
+        ListNode* prev = NULL;
+        ListNode* curr = head;
+
+        while(curr != NULL){
+            ListNode* front = curr -> next;  // front node of current node.
+            curr -> next = prev;
+            prev = curr;
+            curr = front;
         }
-        return prev;
-  }
+        return prev;   // means it will be  the new head of our linked list.
+    }
+
+
+
+    bool isPalindrome(ListNode* head) {
+       ListNode* reverseHead = reverseList(head);
+
+       while(head != NULL){
+          if(reverseHead != head){
+            return false;
+          }
+          reverseHead = reverseHead -> next;
+          head = head -> next;
+       }
+
+       return true;
+    }
 
 ListNode* convertArr2LL(vector<int> &arr){
     ListNode* head = new ListNode(arr[0]);
@@ -34,37 +51,37 @@ ListNode* convertArr2LL(vector<int> &arr){
     return head;
 }
 
-bool isPalindrome(ListNode* head) {
-        if(head == NULL || head -> next == NULL) return true;
+// bool isPalindrome(ListNode* head) {
+//         if(head == NULL || head -> next == NULL) return true;
         
-        ListNode* slow = head;
-        ListNode* fast = head;
+//         ListNode* slow = head;
+//         ListNode* fast = head;
         
-        while(fast -> next != NULL && fast -> next -> next != NULL){
-            slow = slow -> next;
-            fast = fast -> next -> next;
-        }
+//         while(fast -> next != NULL && fast -> next -> next != NULL){
+//             slow = slow -> next;
+//             fast = fast -> next -> next;
+//         }
 
-        ListNode* newHead = reverse(slow -> next);
-        ListNode* first = head;
-        ListNode* second = newHead;
+//         ListNode* newHead = reverse(slow -> next);
+//         ListNode* first = head;
+//         ListNode* second = newHead;
 
-        while(second != NULL){
-            if(first -> val != second -> val){
-                return false;
-            }
+//         while(second != NULL){
+//             if(first -> val != second -> val){
+//                 return false;
+//             }
 
-            first = first -> next;
-            second = second -> next;
-        }
+//             first = first -> next;
+//             second = second -> next;
+//         }
 
-        return true;
-}
+//         return true;
+// }
 
 
     int main(){
 
-    vector<int> arr = {1,1,2,1};
+    vector<int> arr = {1,2,2,1};
    
     ListNode* head = convertArr2LL(arr);
 
